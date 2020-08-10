@@ -1,12 +1,32 @@
 {
 	"name": "surround-with-csharp",
+	"icon": "images/logo.png",
 	"displayName": "surround-with-csharp",
 	"description": "Brings support of surround-with functionality to vscode for C#.",
 	"version": "0.0.1",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/NikiforovAll/surround-with-csharp.git"
+	},
+	"markdown": "github",
+	"galleryBanner": {
+		"color": "#512BD4",
+		"theme": "dark"
+	},
+	"keywords": [
+		"surround",
+		"c#",
+		"csharp",
+		"wrap",
+		"selection",
+		"code blocks",
+		"snippet"
+	],
 	"engines": {
 		"vscode": "^1.46.0"
 	},
 	"categories": [
+		"Snippets",
 		"Other"
 	],
 	"activationEvents": [
