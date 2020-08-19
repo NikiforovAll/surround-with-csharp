@@ -2,6 +2,7 @@ import * as vscode from 'vscode';
 import { SurroundCompletionProvider } from './surround-completion-provider';
 import { NamespaceSurroundHandler } from './surround-snippet-handlers/namespace.surround-handler';
 import { CompletionProvider } from './surround-snippet-handlers/completion-provider';
+import { SurroundQuickPickItem } from './view/surround-quickpick-item';
 
 export function activate(context: vscode.ExtensionContext) {
 	const surroundCompletionProvider = new SurroundCompletionProvider(
@@ -21,7 +22,7 @@ function registerCompletionProvider(
 	const documentSelector: vscode.DocumentSelector = {
 		language: 'csharp',
 	};
-	
+
 	return vscode.languages.registerCompletionItemProvider(documentSelector,
 		surroundCompletionProvider);
 }
@@ -32,9 +33,11 @@ function registerCompletionCommands(
 		const quickPickItems = surroundCompletionProvider.providers
 			.map(transformToQuickPickItem);
 		vscode.window.showQuickPick(quickPickItems).then(item => {
+			const surroundItem = item as SurroundQuickPickItem;
 			if (item) {
-				vscode.window.showInformationMessage(item.description || '');
-				// applyQuickPick(item, surroundItems);
+				vscode.window.activeTextEditor
+					?.insertSnippet(
+						new vscode.SnippetString(surroundItem.snippet));
 			}
 		});
 	});
@@ -46,5 +49,7 @@ function transformToQuickPickItem(provider: CompletionProvider): vscode.QuickPic
 		label: provider.completionInfo.label,
 		detail: provider.completionInfo.documentation,
 		description: provider.completionInfo.description,
-	};
+		snippet: provider.completionInfo.snippet
+	} as SurroundQuickPickItem;
 }
+

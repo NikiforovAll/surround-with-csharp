@@ -1,6 +1,6 @@
-# surround-with-csharp README
+# Surround with CSharp
 
-Brings support of surround-with functionality to vscode for C#. Inspiration comes from from Visual Studio 2019.
+Brings support of surround-with functionality to vscode for C#. Inspiration comes from from *Visual Studio 2019*.
 
 ## Features
 
