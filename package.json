@@ -37,7 +37,7 @@
 		"commands":[
 			{
 				"command": "surround.with",
-				"title": "C# Surround: Surround With",
+				"title": "C#: Surround With",
 				"enablement": "editorHasSelection",
 				"icon": "${symbol-snippet}"
 			}
