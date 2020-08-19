@@ -39,7 +39,7 @@
 				"command": "surround.with",
 				"title": "C# Surround: Surround With",
 				"enablement": "editorHasSelection",
-				"icon": "\\${symbol-snippet}"
+				"icon": "${symbol-snippet}"
 			}
 		],
 		"keybindings": [

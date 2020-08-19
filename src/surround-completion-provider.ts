@@ -3,7 +3,7 @@ import { CompletionProvider } from './surround-snippet-handlers/completion-provi
 type CompletionProviderResult =
     vscode.ProviderResult<vscode.CompletionItem[] | vscode.CompletionList<vscode.CompletionItem>>;
 export class SurroundCompletionProvider implements vscode.CompletionItemProvider {
-    providers: CompletionProvider[];
+    public providers: CompletionProvider[];
     constructor(...providers: CompletionProvider[]) {
         this.providers = providers;
     }
