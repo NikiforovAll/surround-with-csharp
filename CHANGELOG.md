@@ -6,4 +6,12 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
-- Initial release
+* Support for general snippets
+* Dynamic indentation based on config
+* Add demo
+
+## [0.1.0] - 19.08.2020
+
+### Added
+
+* Initial release

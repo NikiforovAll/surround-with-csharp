@@ -15,15 +15,8 @@ Action             | Alias                          | Shortcut
 C#: Surround With  | `surround.with`                | `CTRL + SHIFT + S, CTRL + SHIFT + S`
 Trigger completion | `editor.action.triggerSuggest` | `CTRL + SPACE`
 
-## Backlog
-
-* Support for main C# snippets
-* Dynamic indentation based on user config
-
 ## Known Issues
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
-
-### 0.1.0
+Please see [CHANGELOG.md](./CHANGELOG.md)

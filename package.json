@@ -3,7 +3,16 @@
 	"icon": "images/logo.png",
 	"displayName": "surround-with-csharp",
 	"description": "Brings support of surround-with functionality to vscode for C#. Inspiration comes from similar functionality from Visual Studio.",
-	"version": "0.0.1",
+	"version": "0.1.0",
+	"publisher": "nikiforovall",
+	"author": {
+		"email": "alexey.nikiforovall@gmail.com",
+		"name": "Alexey Nikiforov",
+		"url": "https://github.com/NikiforovAll"
+	},
+	"publishConfig": {
+		
+	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/NikiforovAll/surround-with-csharp.git"
@@ -34,7 +43,7 @@
 	],
 	"main": "./out/extension.js",
 	"contributes": {
-		"commands":[
+		"commands": [
 			{
 				"command": "surround.with",
 				"title": "C#: Surround With",
@@ -56,19 +65,22 @@
 		"lint": "eslint src --ext ts",
 		"watch": "tsc -watch -p ./",
 		"pretest": "npm run compile && npm run lint",
-		"test": "node ./out/test/runTest.js"
+		"test": "node ./out/test/runTest.js",
+		"package": "vsce package -o release/",
+		"publish": "vsce publish"
 	},
 	"devDependencies": {
-		"@types/vscode": "^1.46.0",
 		"@types/glob": "^7.1.1",
 		"@types/mocha": "^7.0.2",
 		"@types/node": "^13.11.0",
-		"eslint": "^6.8.0",
-		"@typescript-eslint/parser": "^2.30.0",
+		"@types/vscode": "^1.46.0",
 		"@typescript-eslint/eslint-plugin": "^2.30.0",
+		"@typescript-eslint/parser": "^2.30.0",
+		"eslint": "^6.8.0",
 		"glob": "^7.1.6",
 		"mocha": "^7.1.2",
 		"typescript": "^3.8.3",
+		"vsce": "^1.78.0",
 		"vscode-test": "^1.3.0"
 	}
 }
