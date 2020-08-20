@@ -36,8 +36,7 @@ function registerCompletionCommands(
 			const surroundItem = item as SurroundQuickPickItem;
 			if (item) {
 				vscode.window.activeTextEditor
-					?.insertSnippet(
-						new vscode.SnippetString(surroundItem.snippet));
+					?.insertSnippet(surroundItem.snippet);
 			}
 		});
 	});

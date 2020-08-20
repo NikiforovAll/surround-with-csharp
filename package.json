@@ -3,7 +3,7 @@
 	"icon": "images/logo.png",
 	"displayName": "surround-with-csharp",
 	"description": "Brings support of surround-with functionality to vscode for C#. Inspiration comes from similar functionality from Visual Studio.",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"publisher": "nikiforovall",
 	"author": {
 		"email": "alexey.nikiforovall@gmail.com",

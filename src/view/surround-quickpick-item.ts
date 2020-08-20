@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
 
 export interface SurroundQuickPickItem extends vscode.QuickPickItem {
-    snippet: string;
+    snippet: vscode.SnippetString;
 }

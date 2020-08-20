@@ -6,9 +6,11 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
-* Support for general snippets
-* Dynamic indentation based on config
 * Add demo
+
+## [0.2.0] - 20.08.2002
+
+* Add general set of snippets
 
 ## [0.1.0] - 19.08.2020
 

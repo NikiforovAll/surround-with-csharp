@@ -1,13 +1,12 @@
-import { CompletionItem } from "vscode";
-
+import * as vscode from "vscode";
 export interface CompletionProvider {
     completionInfo: CompletionInfo;
-    provide(): CompletionItem
+    provide(): vscode.CompletionItem
 }
 
 export interface CompletionInfo {
     label: string;
     description: string;
     documentation?: string;
-    snippet: string;
+    snippet: vscode.SnippetString;
 }
