@@ -2,16 +2,14 @@ import { CompletionProvider, CompletionInfo } from "./completion-provider";
 import * as vscode from 'vscode';
 import { SnippetStringBuilder } from "../utils/snippet-builder-utils";
 
-export class NamespaceSurroundHandler implements CompletionProvider {
+export class UsingSurroundHandler implements CompletionProvider {
     completionInfo: CompletionInfo = {
-        label: 'namespace',
-        description: 'Code snippet for: #namespace',
-        documentation: "Wraps up a selected text into `namespace`.",
-        snippet: new SnippetStringBuilder('namespace ')
-            .addPlaceholder('MyNamespace')
+        label: 'using',
+        description: 'Code snippet for: #using',
+        documentation: "Wraps up a selected text into `using`.",
+        snippet: new SnippetStringBuilder('using (${1:resource})')
             .wrapInBrackets()
     };
-
 
     provide(): vscode.CompletionItem {
         var ci = this.completionInfo;

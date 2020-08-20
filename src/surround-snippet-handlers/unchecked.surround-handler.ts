@@ -2,16 +2,14 @@ import { CompletionProvider, CompletionInfo } from "./completion-provider";
 import * as vscode from 'vscode';
 import { SnippetStringBuilder } from "../utils/snippet-builder-utils";
 
-export class NamespaceSurroundHandler implements CompletionProvider {
+export class UnCheckedSurroundHandler implements CompletionProvider {
     completionInfo: CompletionInfo = {
-        label: 'namespace',
-        description: 'Code snippet for: #namespace',
-        documentation: "Wraps up a selected text into `namespace`.",
-        snippet: new SnippetStringBuilder('namespace ')
-            .addPlaceholder('MyNamespace')
+        label: 'unchecked',
+        description: 'Code snippet for: #unchecked',
+        documentation: "Wraps up a selected text into `unchecked`.",
+        snippet: new SnippetStringBuilder('unchecked')
             .wrapInBrackets()
     };
-
 
     provide(): vscode.CompletionItem {
         var ci = this.completionInfo;

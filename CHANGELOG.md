@@ -7,6 +7,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## [Unreleased]
 
 * Add demo
+* Consider to add subcommands for popular snippets
 
 ## [0.2.0] - 20.08.2002
 

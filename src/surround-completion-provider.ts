@@ -14,15 +14,12 @@ export class SurroundCompletionProvider implements vscode.CompletionItemProvider
         context: vscode.CompletionContext): CompletionProviderResult {
         const completions: CompletionProviderResult = [];
         var textEditor = vscode.window.activeTextEditor;
-        if (!textEditor) {
+        if (!textEditor || textEditor.selection.isEmpty) {
             return [];
         }
-        const isTextSelected = textEditor.selection;
-        if (isTextSelected) {
-            this.providers.forEach(p => {
-                completions.push(p.provide());
-            });
-        }
+        this.providers.forEach(p => {
+            completions.push(p.provide());
+        });
         return completions;
     }
 }

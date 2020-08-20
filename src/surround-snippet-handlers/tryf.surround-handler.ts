@@ -1,17 +1,25 @@
 import { CompletionProvider, CompletionInfo } from "./completion-provider";
 import * as vscode from 'vscode';
 import { SnippetStringBuilder } from "../utils/snippet-builder-utils";
+import { EOL } from 'os';
 
-export class NamespaceSurroundHandler implements CompletionProvider {
+export class TryFSurroundHandler implements CompletionProvider {
     completionInfo: CompletionInfo = {
-        label: 'namespace',
-        description: 'Code snippet for: #namespace',
-        documentation: "Wraps up a selected text into `namespace`.",
-        snippet: new SnippetStringBuilder('namespace ')
-            .addPlaceholder('MyNamespace')
+        label: 'tryf',
+        description: 'Code snippet for: #tryf',
+        documentation: "Wraps up a selected text into `tryf`.",
+        //TODO: refactor this
+        snippet: new SnippetStringBuilder('try')
             .wrapInBrackets()
-    };
+            .appendText(EOL)
+            .appendText('finally')
+            .appendText(EOL)
+            .appendText('{')
+            .appendText(EOL)
+            .appendText('}')
 
+
+    };
 
     provide(): vscode.CompletionItem {
         var ci = this.completionInfo;
