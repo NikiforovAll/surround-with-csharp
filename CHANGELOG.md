@@ -6,9 +6,6 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
-* Add demo
-* Consider to add subcommands for popular snippets
-
 ## [1.2.0] - 21.08.2002
 
 * Add subcommands and common bindings

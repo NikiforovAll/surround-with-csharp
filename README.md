@@ -36,11 +36,13 @@ Brings support of surround-with functionality to vscode for C#. Inspiration come
 
 ### Demo: Surround via command
 
-![surround-with-csharp-demo1](./images/surr-w-cs-d1.gif)
+<!-- ![surround-with-csharp-demo1](./images/surr-w-cs-d1.gif) -->
+![surr-w-cs-d1](https://user-images.githubusercontent.com/8037439/90891007-af748b80-e3c3-11ea-8b38-435acaad56ce.gif)
 
 ### Demo: Surround via CompletionItem
 
-![surround-with-csharp-demo1](./images/surr-w-cs-d2.gif)
+<!-- ![surround-with-csharp-demo1](./images/surr-w-cs-d2.gif) -->
+![surr-w-cs-d2](https://user-images.githubusercontent.com/8037439/90891009-b13e4f00-e3c3-11ea-8285-6243d4601a99.gif)
 
 Action             | Alias                          | Shortcut
 -------------------|--------------------------------|-------------------------------------
