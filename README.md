@@ -2,6 +2,8 @@
 
 Brings support of surround-with functionality to vscode for C#. Inspiration comes from from *Visual Studio 2019*.
 
+**Blog post:** [nikiforovall.github.io/productivity/csharp/vscode/2020/08/21/surround-with-csharp](https://nikiforovall.github.io/productivity/csharp/vscode/2020/08/21/surround-with-csharp.html)
+
 ## Features
 
 * You can surround you code based on two approaches:
