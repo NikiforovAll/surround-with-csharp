@@ -9,9 +9,13 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 * Add demo
 * Consider to add subcommands for popular snippets
 
-## [0.2.0] - 20.08.2002
+## [1.2.0] - 21.08.2002
 
-* Add general set of snippets
+* Add subcommands and common bindings
+
+## [1.0.1] - 20.08.2002
+
+* Add general set of snippets (Core)
 
 ## [0.1.0] - 19.08.2020
 
