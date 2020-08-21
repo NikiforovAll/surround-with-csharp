@@ -50,8 +50,8 @@ export function activate(context: vscode.ExtensionContext) {
 	);
 	let disposable = registerCompletionProvider(surroundCompletionProvider);
 	context.subscriptions.push(disposable);
-	disposable = registerCompletionCommands(surroundCompletionProvider);
-	context.subscriptions.push(disposable);
+	let disposableCollection = registerCompletionCommands(surroundCompletionProvider);
+	context.subscriptions.push(...disposableCollection);
 }
 
 // this method is called when your extension is deactivated
@@ -63,13 +63,16 @@ function registerCompletionProvider(
 		language: 'csharp',
 	};
 
-	return vscode.languages.registerCompletionItemProvider(documentSelector,
+	return vscode.languages.registerCompletionItemProvider(
+		documentSelector,
 		surroundCompletionProvider);
 }
 
 function registerCompletionCommands(
-	surroundCompletionProvider: SurroundCompletionProvider): vscode.Disposable {
-	let disposable = vscode.commands.registerCommand("surround.with", () => {
+	surroundCompletionProvider: SurroundCompletionProvider): vscode.Disposable[] {
+	const disposed: vscode.Disposable[] = [];
+	const commandPrefix = 'surround.with';
+	let disposable = vscode.commands.registerCommand(commandPrefix, () => {
 		const quickPickItems = surroundCompletionProvider.providers
 			.map(transformToQuickPickItem);
 		vscode.window.showQuickPick(quickPickItems).then(item => {
@@ -80,7 +83,53 @@ function registerCompletionCommands(
 			}
 		});
 	});
-	return disposable;
+	disposed.push(disposable);
+	const additionalSurroundCommands = [
+		// With keybindings
+		NamespaceSurroundHandler,
+		ForSurroundHandler,
+		ForEachSurroundHandler,
+		DoSurroundHandler,
+		WhileSurroundHandler,
+		IfSurroundHandler,
+		ElseSurroundHandler,
+		TrySurroundHandler,
+		TryFSurroundHandler,
+		LockSurroundHandler,
+		// Without default keybindings
+		DIfSurroundHandler,
+		RegionSurroundHandler,
+		CheckedSurroundHandler,
+		ClassSurroundHandler,
+		InterfaceSurroundHandler,
+		StructSurroundHandler,
+		EnumSurroundHandler,
+		ForRSurroundHandler,
+		UnCheckedSurroundHandler,
+		UnSafeSurroundHandler,
+		UsingSurroundHandler,
+	];
+	for (const sc of additionalSurroundCommands) {
+		const provider = surroundCompletionProvider.providers.find(p => {
+			return p instanceof sc;
+		});
+		if (!provider) {
+			console.warn('Registered provider not found');
+			continue;
+		}
+		let disposable = vscode
+			.commands
+			.registerCommand(`${commandPrefix}.${provider?.completionInfo.label}`, () => {
+				const snippet = provider?.completionInfo?.snippet;
+				if (!snippet) {
+					console.warn('Snippet not found');
+					return;
+				}
+				vscode.window.activeTextEditor?.insertSnippet(snippet);
+			});
+		disposed.push(disposable);
+	}
+	return disposed;
 }
 
 function transformToQuickPickItem(provider: CompletionProvider): vscode.QuickPickItem {
@@ -91,4 +140,3 @@ function transformToQuickPickItem(provider: CompletionProvider): vscode.QuickPic
 		snippet: provider.completionInfo.snippet
 	} as SurroundQuickPickItem;
 }
-

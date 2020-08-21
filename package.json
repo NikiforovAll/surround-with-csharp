@@ -47,7 +47,6 @@
 			{
 				"command": "surround.with",
 				"title": "C#: Surround With",
-				"enablement": "editorHasSelection",
 				"icon": "${symbol-snippet}"
 			}
 		],
@@ -55,6 +54,56 @@
 			{
 				"command": "surround.with",
 				"key": "ctrl+shift+S ctrl+shift+S",
+				"when": "editorHasSelection"
+			},
+			{
+				"command": "surround.with.namespace",
+				"key": "ctrl+shift+S N",
+				"when": "editorHasSelection"
+			},
+			{
+				"command": "surround.with.for",
+				"key": "ctrl+shift+S F",
+				"when": "editorHasSelection"
+			},
+			{
+				"command": "surround.with.foreach",
+				"key": "ctrl+shift+S ctrl+F",
+				"when": "editorHasSelection"
+			},
+			{
+				"command": "surround.with.do",
+				"key": "ctrl+shift+S D",
+				"when": "editorHasSelection"
+			},
+			{
+				"command": "surround.with.while",
+				"key": "ctrl+shift+S W",
+				"when": "editorHasSelection"
+			},
+			{
+				"command": "surround.with.if",
+				"key": "ctrl+shift+S I",
+				"when": "editorHasSelection"
+			},
+			{
+				"command": "surround.with.else",
+				"key": "ctrl+shift+S E",
+				"when": "editorHasSelection"
+			},
+			{
+				"command": "surround.with.try",
+				"key": "ctrl+shift+S T",
+				"when": "editorHasSelection"
+			},
+			{
+				"command": "surround.with.tryf",
+				"key": "ctrl+shift+S ctrl+T",
+				"when": "editorHasSelection"
+			},
+			{
+				"command": "surround.with.lock",
+				"key": "ctrl+shift+S L",
 				"when": "editorHasSelection"
 			}
 		]
