@@ -23,6 +23,8 @@ import { UnCheckedSurroundHandler } from './surround-snippet-handlers/unchecked.
 import { WhileSurroundHandler } from './surround-snippet-handlers/while.surround-handler';
 import { UnSafeSurroundHandler } from './surround-snippet-handlers/unsafe.surround-handler';
 import { UsingSurroundHandler } from './surround-snippet-handlers/using.surround-handler';
+import { MethodSurroundHandler } from './surround-snippet-handlers/method.surround-handler';
+import { LocalFunctionSurroundHandler } from './surround-snippet-handlers/local-function.surround-handler';
 
 export function activate(context: vscode.ExtensionContext) {
 	const surroundCompletionProvider = new SurroundCompletionProvider(
@@ -47,6 +49,8 @@ export function activate(context: vscode.ExtensionContext) {
 		new UnSafeSurroundHandler(),
 		new UsingSurroundHandler(),
 		new WhileSurroundHandler(),
+		new MethodSurroundHandler(),
+		new LocalFunctionSurroundHandler(),
 	);
 	let disposable = registerCompletionProvider(surroundCompletionProvider);
 	context.subscriptions.push(disposable);
@@ -108,6 +112,8 @@ function registerCompletionCommands(
 		UnCheckedSurroundHandler,
 		UnSafeSurroundHandler,
 		UsingSurroundHandler,
+		MethodSurroundHandler,
+		LocalFunctionSurroundHandler,
 	];
 	for (const sc of additionalSurroundCommands) {
 		const provider = surroundCompletionProvider.providers.find(p => {

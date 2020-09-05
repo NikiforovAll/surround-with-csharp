@@ -12,29 +12,31 @@ Brings support of surround-with functionality to vscode for C#. Inspiration come
 
 ## Supported Snippets
 
-| Snippet     | Alias      | Keybinding          |
-|-------------|------------|---------------------|
-| namespace   | #namespace | CTRL+SHIFT+S N      |
-| class       | #class     |                     |
-| interface   | #interface |                     |
-| struct      | #struct    |                     |
-| enum        | #enum      |                     |
-| if          | #if        | CTRL+SHIFT+S I      |
-| dif         | #dif       |                     |
-| else        | #else      | CTRL+SHIFT+S E      |
-| do          | #do        | CTRL+SHIFT+S D      |
-| while       | #while     | CTRL+SHIFT+S W      |
-| for         | #for       | CTRL+SHIFT+S F      |
-| foreach     | #foreach   | CTRL+SHIFT+S CTRL+F |
-| reverse for | #forr      |                     |
-| try-catch   | #try       | CTRL+SHIFT+S T      |
-| try-finally | #tryf      | CTRL+SHIFT+S CTRL+T |
-| lock        | #lock      | CTRL+SHIFT+S L      |
-| checked     | #checked   |                     |
-| unchecked   | #unchecked |                     |
-| unsafe      | #unsafe    |                     |
-| using       | #using     |                     |
-| region      | #region    |                     |
+| Snippet        | Alias           | Keybinding          |
+|----------------|-----------------|---------------------|
+| namespace      | #namespace      | CTRL+SHIFT+S N      |
+| class          | #class          |                     |
+| interface      | #interface      |                     |
+| struct         | #struct         |                     |
+| enum           | #enum           |                     |
+| if             | #if             | CTRL+SHIFT+S I      |
+| dif            | #dif            |                     |
+| else           | #else           | CTRL+SHIFT+S E      |
+| do             | #do             | CTRL+SHIFT+S D      |
+| while          | #while          | CTRL+SHIFT+S W      |
+| for            | #for            | CTRL+SHIFT+S F      |
+| foreach        | #foreach        | CTRL+SHIFT+S CTRL+F |
+| reverse for    | #forr           |                     |
+| try-catch      | #try            | CTRL+SHIFT+S T      |
+| try-finally    | #tryf           | CTRL+SHIFT+S CTRL+T |
+| lock           | #lock           | CTRL+SHIFT+S L      |
+| checked        | #checked        |                     |
+| unchecked      | #unchecked      |                     |
+| unsafe         | #unsafe         |                     |
+| using          | #using          |                     |
+| region         | #region         |                     |
+| method         | #method         | CTRL+SHIFT+S CTRL+M |
+| local-function | #local-function | CTRL+SHIFT+S M      |
 
 ### Demo: Surround via command
 

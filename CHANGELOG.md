@@ -6,6 +6,10 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
+## [1.3.0] - 21.08.2002
+
+* Add surround with method declaration and local function declaration
+
 ## [1.2.0] - 21.08.2002
 
 * Add subcommands and common bindings

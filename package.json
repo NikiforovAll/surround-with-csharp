@@ -3,7 +3,7 @@
 	"icon": "images/logo.png",
 	"displayName": "surround-with-csharp",
 	"description": "Brings support of surround-with functionality to vscode for C#. Inspiration comes from similar functionality from Visual Studio.",
-	"version": "1.2.0",
+	"version": "1.3.0",
 	"publisher": "nikiforovall",
 	"author": {
 		"email": "alexey.nikiforovall@gmail.com",
@@ -104,6 +104,16 @@
 			{
 				"command": "surround.with.lock",
 				"key": "ctrl+shift+S L",
+				"when": "editorHasSelection"
+			},
+			{
+				"command": "surround.with.method",
+				"key": "ctrl+shift+S ctrl+M",
+				"when": "editorHasSelection"
+			},
+			{
+				"command": "surround.with.local-function",
+				"key": "ctrl+shift+S M",
 				"when": "editorHasSelection"
 			}
 		]
