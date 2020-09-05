@@ -23,14 +23,14 @@ export class TryFSurroundHandler implements CompletionProvider {
 
     provide(): vscode.CompletionItem {
         var ci = this.completionInfo;
-        const namespaceCompletionItem = new vscode.CompletionItem(
+        const completionItem = new vscode.CompletionItem(
             this.completionInfo.label,
             vscode.CompletionItemKind.Snippet);
-        namespaceCompletionItem.sortText = `.${namespaceCompletionItem.label}`;
-        namespaceCompletionItem.documentation = new vscode.MarkdownString(ci.documentation);
-        namespaceCompletionItem.detail = ci.description;
-        namespaceCompletionItem.insertText = ci.snippet;
-        return namespaceCompletionItem;
+        completionItem.sortText = `.${completionItem.label}`;
+        completionItem.documentation = new vscode.MarkdownString(ci.documentation);
+        completionItem.detail = ci.description;
+        completionItem.insertText = ci.snippet;
+        return completionItem;
     }
 
 }
